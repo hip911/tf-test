@@ -8,6 +8,9 @@ Example: ~/.ssh/terraform.pub
 DESCRIPTION
 }
 
+variable "access_key" {}
+variable "secret_key" {}
+
 variable "key_name" {
   description = "Desired name of AWS key pair"
 }

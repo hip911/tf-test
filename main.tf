@@ -1,9 +1,20 @@
+terraform {
+  backend "s3" {
+    bucket = "tf-test-backend"
+    key    = "terraform.tfstate"
+    region = "eu-west-1"
+    access_key = "${var.access_key}"
+    secret_key = "${var.secret_key}"
+  }
+}
+
 # Specify the provider and access details
 provider "aws" {
   access_key = "${var.access_key}"
   secret_key = "${var.secret_key}"
   region = "${var.aws_region}"
 }
+
 
 # Create a VPC to launch our instances into
 resource "aws_vpc" "default" {
